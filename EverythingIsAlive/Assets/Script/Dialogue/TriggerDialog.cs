@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class TriggerDialog : MonoBehaviour
 {
     //对话的部分
-    public GameObject TextSpace;
+    public GameObject TextSpace;//对话框
     public TMP_Text DialogText; // 对话文本UI对象(按照DialogueType顺序)
     public string[] dialogLines; // 对话行数组
     private int currentLine = 0; // 当前对话行索引
@@ -79,6 +79,7 @@ public class TriggerDialog : MonoBehaviour
                         StartTyping();
                         //不可移动
                         playerControl.CanMove = false;
+                        playerControl.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
                     }
                 }
             }

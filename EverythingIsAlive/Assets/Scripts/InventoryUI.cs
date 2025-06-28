@@ -5,12 +5,9 @@ using System.Collections.Generic;
 
 public class InventoryUI : MonoBehaviour
 {
-    [Header("背包数据")]
     public PlayerInventory inventory;
-
-    [Header("上方列表")]
-    public Transform topPanel;          
-    public GameObject itemSlotPrefab;  
+    public Transform rightItemPanel;
+    public GameObject relicSlotPrefab;
 
     [Header("详情显示")]
     public Image detailIcon;            // DetailPanel/DetailIcon
@@ -19,26 +16,23 @@ public class InventoryUI : MonoBehaviour
 
     void Start()
     {
-        RefreshTopPanel();
+        RefreshUI();
     }
 
-    // 刷新上方图标列表
-    public void RefreshTopPanel()
+    public void RefreshUI()
     {
-        // 清空旧的
-        foreach (Transform c in topPanel) Destroy(c.gameObject);
+        foreach (Transform t in rightItemPanel)
+            Destroy(t.gameObject);
 
-        // 重新生成
-        List<ItemData> list = inventory.GetUnassignedItems();
-        foreach (var item in list)
+        foreach (var item in inventory.items)
         {
-            var go = Instantiate(itemSlotPrefab, topPanel);
-            var slotUI = go.GetComponent<ItemSlotUI>();
-            slotUI.Setup(item, this);
+            if (item.isPickedUp && !item.isAssignedToOriginalOwner)
+            {
+                var slotGO = Instantiate(relicSlotPrefab, rightItemPanel);
+                slotGO.GetComponent<RelicSlotUI>().Setup(item);
+            }
         }
     }
-
-    // 点击某个物品后调用，显示到下方大图和右侧文字
     public void ShowItemDetail(ItemData item)
     {
         if (detailIcon == null) Debug.LogError("⚠️ detailIcon 没有在 Inspector 里赋值！");

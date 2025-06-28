@@ -1,14 +1,18 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Linq;
 
 public class CorpsesUIManager : MonoBehaviour
 {
-    [Header("人物数据列表 (SO)")]
     public List<CharacterData> allCharacters;
-
-    [Header("UI 预制体 & 容器")]
     public GameObject characterButtonPrefab;
-    public Transform characterPanel;   // 左侧放按钮的容器
+    public Transform characterPanel;
+
+    public InventoryUI inventoryUI;
+    public PlayerInventory inventory;
+    public CharacterData currentCharacter; // 之前的 currentCorpse 改为 currentCharacter
+
+    private Dictionary<CharacterData, CharacterButtonUI> characterUIMap = new Dictionary<CharacterData, CharacterButtonUI>();
 
     void Start()
     {
@@ -17,40 +21,41 @@ public class CorpsesUIManager : MonoBehaviour
 
     public void RefreshCharacterPanel()
     {
-        Debug.Log($"[Refresh] allCharacters.Count = {allCharacters?.Count}");
-        foreach (var cd in allCharacters)
-            Debug.Log($"-- CharacterID: {cd.characterID}");
-        // 1. 清空容器
-        foreach (Transform child in characterPanel)
-        {
-            Destroy(child.gameObject);
-        }
+        foreach (Transform t in characterPanel)
+            Destroy(t.gameObject);
+        characterUIMap.Clear();
 
-        // 2. 逐个 Instantiate 并 Setup
         foreach (var cd in allCharacters)
         {
             var go = Instantiate(characterButtonPrefab, characterPanel);
-            var btnUI = go.GetComponent<CharacterButtonUI>();
-            btnUI.Setup(cd, this);
+            var ui = go.GetComponent<CharacterButtonUI>();
+            ui.Setup(cd, this);
+            characterUIMap[cd] = ui;
         }
     }
 
-    // 从 Unclicked -> Selected
-    public void OnCharacterClicked(CharacterData cd)
+    public void OnCharacterSelected(CharacterData cd)
     {
         if (cd.state == CharacterState.Unclicked)
         {
             cd.state = CharacterState.Selected;
+            characterUIMap[cd].Refresh();
         }
     }
 
-    // 在 Confirm 操作后，被调用来完成配对
     public void ConfirmCharacter(CharacterData cd)
     {
         if (cd.state == CharacterState.Selected)
         {
             cd.state = CharacterState.Paired;
-            // TODO: 更新下方详情 & 拖拽逻辑
+            characterUIMap[cd].Refresh();
         }
+    }
+
+    public int GetExpectedRelicCount(CharacterData cd)
+    {
+        if (currentCharacter == null || currentCharacter.relics == null)
+            return 0;
+        return currentCharacter.relics.Count(r => r.characterID == cd.characterID);
     }
 }

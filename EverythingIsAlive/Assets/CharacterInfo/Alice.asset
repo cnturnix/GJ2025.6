@@ -17,4 +17,7 @@ MonoBehaviour:
   description: aaa
   corpseSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   portraitSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  state: 0
+  relics:
+  - {fileID: 11400000, guid: 3ae2f016b7b0255409d9bdb86b2635a2, type: 2}
+  - {fileID: 11400000, guid: 1038d42383bbd7b42a16ce16c5dc4ff0, type: 2}
+  state: 1

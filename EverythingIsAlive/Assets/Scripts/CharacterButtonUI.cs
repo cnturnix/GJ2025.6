@@ -1,52 +1,50 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.EventSystems;
 
-public class CharacterButtonUI : MonoBehaviour
+[RequireComponent(typeof(Button))]
+public class CharacterButtonUI : MonoBehaviour, IDropHandler
 {
-    [Header("UI 组件引用")]
-    [SerializeField] private Image portraitImage;
-    [SerializeField] private TMP_Text nameText;
-    [SerializeField] private Button button;      
+    public Image portraitImage;
+    public TMP_Text nameText;
 
     private CharacterData data;
     private CorpsesUIManager uiManager;
+    private Button button;
 
-    public void Setup(CharacterData cd, CorpsesUIManager mgr)
+    private List<RelicSlotUI> assignedRelicSlots = new List<RelicSlotUI>();
+
+    public void Setup(CharacterData cd, CorpsesUIManager manager)
     {
         data = cd;
-        uiManager = mgr;
+        uiManager = manager;
+        button = GetComponent<Button>();
 
-        // 第一次刷新，可能会用到上面那些引用
-        Refresh();
-
-        // 绑定点击事件
         button.onClick.RemoveAllListeners();
         button.onClick.AddListener(OnClick);
+        Refresh();
     }
 
-    private void Refresh()
+    public void Refresh()
     {
-        // 以下字段如果为 null，就会在这一行报 NRE
         switch (data.state)
         {
             case CharacterState.Unclicked:
-                portraitImage.sprite = null;
-                portraitImage.color = new Color(1, 1, 1, 0);
+                portraitImage.gameObject.SetActive(false);
                 nameText.text = "NOTFOUND";
                 button.interactable = false;
                 break;
-
             case CharacterState.Selected:
+                portraitImage.gameObject.SetActive(true);
                 portraitImage.sprite = data.corpseSprite;
-                portraitImage.color = Color.white;
                 nameText.text = "CONFIRM";
                 button.interactable = true;
                 break;
-
             case CharacterState.Paired:
+                portraitImage.gameObject.SetActive(true);
                 portraitImage.sprite = data.portraitSprite;
-                portraitImage.color = Color.white;
                 nameText.text = data.personName;
                 button.interactable = false;
                 break;
@@ -55,8 +53,50 @@ public class CharacterButtonUI : MonoBehaviour
 
     private void OnClick()
     {
-        uiManager.OnCharacterClicked(data);
-        Refresh();
+        if (data.state == CharacterState.Unclicked)
+        {
+            uiManager.OnCharacterSelected(data);
+            Refresh();
+        }
+        else if (data.state == CharacterState.Selected)
+        {
+            ConfirmRelics();
+        }
+    }
+
+    private void ConfirmRelics()
+    {
+        int expectedCount = uiManager.GetExpectedRelicCount(data);
+        bool success = (assignedRelicSlots.Count == expectedCount);
+
+        foreach (var slot in assignedRelicSlots)
+        {
+            slot.relicData.isAssignedToOriginalOwner = true;
+            Destroy(slot.gameObject);
+        }
+        assignedRelicSlots.Clear();
+
+        uiManager.inventoryUI.RefreshUI();
+
+        if (success)
+        {
+            uiManager.ConfirmCharacter(data);
+            uiManager.RefreshCharacterPanel();
+        }
+    }
+
+    public void OnDrop(PointerEventData eventData)
+    {
+        var slot = eventData.pointerDrag?.GetComponent<RelicSlotUI>();
+        if (slot == null || data.state != CharacterState.Selected)
+            return;
+
+        if (slot.relicData.characterID == data.characterID)
+        {
+            assignedRelicSlots.Add(slot);
+            slot.AcceptDrop(portraitImage.transform);
+        }
     }
 }
+
 

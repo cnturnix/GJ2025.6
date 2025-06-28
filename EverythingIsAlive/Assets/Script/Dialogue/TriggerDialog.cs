@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,9 +10,8 @@ public class TriggerDialog : MonoBehaviour
 {
     //对话的部分
     public GameObject TextSpace;
-    public Text DialogText; // 对话文本UI对象(按照DialogueType顺序)
+    public TMP_Text DialogText; // 对话文本UI对象(按照DialogueType顺序)
     public string[] dialogLines; // 对话行数组
-    public DialogType[] avatars; // 对话角色顺序
     private int currentLine = 0; // 当前对话行索引
     public float letterDelay = 0.05f; // 字母显示延迟
     private string currentDialog; // 当前正在显示的对话
@@ -65,6 +65,10 @@ public class TriggerDialog : MonoBehaviour
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
                 // 射线检测被点击到的物体是父对象
+                // if (hit.collider != null)
+                // {
+                //     Debug.Log(hit.collider.name);
+                // }
                 if (hit.collider != null && hit.collider.gameObject == transform.parent.gameObject)
                 {
                     //触发对话第一句
@@ -112,7 +116,6 @@ public class TriggerDialog : MonoBehaviour
         {
             //设定将要显示的文本
             currentDialog = dialogLines[currentLine];
-            DialogText.text = currentDialog;
 
             // 准备逐字显示对话
             isTyping = true;

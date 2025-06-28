@@ -44,6 +44,9 @@ TagManager:
   - name: Background
     uniqueID: 4220938029
     locked: 0
+  - name: TriggerPlace
+    uniqueID: 3095354163
+    locked: 0
   - name: Player
     uniqueID: 1070901453
     locked: 0

@@ -41,3 +41,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 4220938029
+    locked: 0
+  - name: Player
+    uniqueID: 1070901453
+    locked: 0
+  - name: Dialogue
+    uniqueID: 1226088309
+    locked: 0
+  - name: Foreground
+    uniqueID: 97936071
+    locked: 0
+  - name: BookUI
+    uniqueID: 2890616441
+    locked: 0
+  - name: UI
+    uniqueID: 2303500153
+    locked: 0

@@ -61,6 +61,7 @@ public class NPC01Dialog : MonoBehaviour
                 //不可移动
                 playerControl.CanMove = false;
                 playerControl.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                playerControl.gameObject.GetComponent<Animator>().SetBool("isMove", false);
                 //开始对话第一句
                 StartTyping();
             }

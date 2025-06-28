@@ -2232,6 +2232,14 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+  - component: {fileID: 1316313977}
+  - component: {fileID: 1316313979}
+  - component: {fileID: 1316313978}
+=======
+>>>>>>> Cindyxj
   - component: {fileID: 1288262822}
   - component: {fileID: 1288262823}
   m_Layer: 0
@@ -2272,6 +2280,14 @@ MonoBehaviour:
   M_Defalut: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   Mark: {fileID: 1418421461}
   wall: {fileID: 1712166643}
+<<<<<<< HEAD
+=======
+  Bodies: []
+  Remains: []
+  AliveBodies: []
+  NPC01: {fileID: 0}
+  NPC02: {fileID: 0}
+>>>>>>> Cindyxj
 --- !u!1 &1385270350
 GameObject:
   m_ObjectHideFlags: 0
@@ -2560,6 +2576,10 @@ GameObject:
   - component: {fileID: 1467973186}
   - component: {fileID: 1467973188}
   - component: {fileID: 1467973187}
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
+>>>>>>> Cindyxj
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -3642,6 +3662,8 @@ GameObject:
   - component: {fileID: 1891227100}
   - component: {fileID: 1891227102}
   - component: {fileID: 1891227101}
+  - component: {fileID: 1891227103}
+  - component: {fileID: 1891227104}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -3690,12 +3712,12 @@ SpriteRenderer:
   m_SortingLayerID: 1070901453
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.24528301, g: 0.24528301, b: 0.24528301, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4d50e8d961149c24e91e40bc10c9b1a5, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 3.98, y: 5.19}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -3709,8 +3731,17 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1891227097}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: -7.71, y: -2.04, z: 0}
+=======
+<<<<<<< Updated upstream
+  m_LocalPosition: {x: -14.35, y: -2.04, z: 0}
+>>>>>>> Cindyxj
   m_LocalScale: {x: 1, y: 2, z: 1}
+=======
+  m_LocalPosition: {x: -7.71, y: -2.04, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+>>>>>>> Stashed changes
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -3747,8 +3778,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 3.98, y: 5.19}
+    newSize: {x: 3.98, y: 5.19}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -3777,6 +3808,47 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+=======
+--- !u!95 &1891227103
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891227097}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 23a4fd95618ff014bb1aaf6975db795e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!111 &1891227104
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891227097}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: c7af45533a4d21a43ab53a05178307eb, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+>>>>>>> Cindyxj
 --- !u!1 &1949420648
 GameObject:
   m_ObjectHideFlags: 0
@@ -4210,6 +4282,10 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.54, y: 6.49}
   m_EdgeRadius: 0
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
+>>>>>>> Cindyxj
 --- !u!1 &2109888808
 GameObject:
   m_ObjectHideFlags: 0

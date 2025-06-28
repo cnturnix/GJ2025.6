@@ -14,7 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Children:
   - {fileID: 3}
+<<<<<<< HEAD
   - {fileID: 13}
+=======
+<<<<<<< Updated upstream
+  - {fileID: 12}
+=======
+  - {fileID: 16}
+>>>>>>> Stashed changes
+>>>>>>> Cindyxj
   m_Position:
     serializedVersion: 2
     x: 0
@@ -24,7 +32,15 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
+<<<<<<< HEAD
   controlID: 24115
+=======
+<<<<<<< Updated upstream
+  controlID: 5451
+=======
+  controlID: 7532
+>>>>>>> Stashed changes
+>>>>>>> Cindyxj
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -142,7 +158,15 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
+<<<<<<< HEAD
   controlID: 24136
+=======
+<<<<<<< Updated upstream
+  controlID: 5481
+=======
+  controlID: 7675
+>>>>>>> Stashed changes
+>>>>>>> Cindyxj
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -162,12 +186,30 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 1172.8
     height: 351.2
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
   controlID: 24137
+=======
+<<<<<<< Updated upstream
+    width: 1173.6
+    height: 428
+  m_MinSize: {x: 200, y: 100}
+  m_MaxSize: {x: 16192, y: 8096}
+  vertical: 0
+  controlID: 5517
+=======
+    width: 1172.8
+    height: 385.6
+  m_MinSize: {x: 200, y: 100}
+  m_MaxSize: {x: 16192, y: 8096}
+  vertical: 0
+  controlID: 7676
+>>>>>>> Stashed changes
+>>>>>>> Cindyxj
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -185,10 +227,24 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 289.6
     height: 351.2
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
+=======
+<<<<<<< Updated upstream
+    width: 290.4
+    height: 428
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+=======
+    width: 289.6
+    height: 385.6
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
+>>>>>>> Stashed changes
+>>>>>>> Cindyxj
   m_ActualView: {fileID: 6}
   m_Panes:
   - {fileID: 6}
@@ -216,8 +272,18 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 73.6
+<<<<<<< HEAD
     width: 288.6
     height: 330.2
+=======
+<<<<<<< Updated upstream
+    width: 289.4
+    height: 407
+=======
+    width: 288.6
+    height: 364.6
+>>>>>>> Stashed changes
+>>>>>>> Cindyxj
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -225,10 +291,23 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_SceneHierarchy:
     m_TreeViewState:
+<<<<<<< HEAD
       scrollPos: {x: 0, y: 90.79999}
       m_SelectedIDs: 50690000
       m_LastClickedID: 26960
       m_ExpandedIDs: 2e90feff3a90feff4090feff26fbffffae690000b8690000
+=======
+      scrollPos: {x: 0, y: 0}
+<<<<<<< Updated upstream
+      m_SelectedIDs: 345d0000
+      m_LastClickedID: 23860
+      m_ExpandedIDs: 28fbffff1a5d00003c5d00006e5d0000
+=======
+      m_SelectedIDs: 8ac00000
+      m_LastClickedID: 49290
+      m_ExpandedIDs: 4eb3ffff54b5ffff
+>>>>>>> Stashed changes
+>>>>>>> Cindyxj
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -269,8 +348,18 @@ MonoBehaviour:
     serializedVersion: 2
     x: 289.6
     y: 0
+<<<<<<< HEAD
     width: 883.2001
     height: 351.2
+=======
+<<<<<<< Updated upstream
+    width: 883.19995
+    height: 428
+=======
+    width: 883.2001
+    height: 385.6
+>>>>>>> Stashed changes
+>>>>>>> Cindyxj
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 8}
@@ -301,8 +390,18 @@ MonoBehaviour:
     serializedVersion: 2
     x: 289.6
     y: 73.6
+<<<<<<< HEAD
     width: 881.2001
     height: 330.2
+=======
+<<<<<<< Updated upstream
+    width: 881.19995
+    height: 407
+=======
+    width: 881.2001
+    height: 364.6
+>>>>>>> Stashed changes
+>>>>>>> Cindyxj
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -560,9 +659,21 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< HEAD
     m_Target: {x: -7.363521, y: -0.52568364, z: -3.8582807}
     speed: 2
     m_Value: {x: -7.363521, y: -0.52568364, z: -3.8582807}
+=======
+<<<<<<< Updated upstream
+    m_Target: {x: -5.2204027, y: -2.130262, z: -2.2505445}
+    speed: 2
+    m_Value: {x: -5.4040017, y: -2.0913715, z: -2.2527015}
+=======
+    m_Target: {x: -4.841918, y: -0.20681545, z: -0.018680848}
+    speed: 2
+    m_Value: {x: -4.9376516, y: -0.28115606, z: -0.016413223}
+>>>>>>> Stashed changes
+>>>>>>> Cindyxj
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -613,9 +724,21 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
+<<<<<<< HEAD
     m_Target: 5.644752
     speed: 2
     m_Value: 5.644752
+=======
+<<<<<<< Updated upstream
+    m_Target: 4.5777683
+    speed: 2
+    m_Value: 4.7934747
+=======
+    m_Target: 5.2660036
+    speed: 2
+    m_Value: 5.039238
+>>>>>>> Stashed changes
+>>>>>>> Cindyxj
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -648,6 +771,7 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
+<<<<<<< HEAD
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 924ffcbe75518854f97b48776d0f1939, type: 3}
   m_Name: 
@@ -1986,23 +2110,240 @@ MonoBehaviour:
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: ProjectBrowser
+=======
+<<<<<<< Updated upstream
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: ConsoleWindow
+=======
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12914, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Animator
+    m_Image: {fileID: 1711060831702674872, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 289.6
+    y: 73.6
+    width: 881.2001
+    height: 364.6
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+    m_OverlaysVisible: 1
+  m_ViewTransforms:
+    m_KeySerializationHelper:
+    - {fileID: -2548113596664311241, guid: 23a4fd95618ff014bb1aaf6975db795e, type: 2}
+    m_ValueSerializationHelper:
+    - e00: 0.89892834
+      e01: 0
+      e02: 0
+      e03: 1.5509949
+      e10: 0
+      e11: 0.89892834
+      e12: 0
+      e13: 34.388596
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+  m_PreviewAnimator: {fileID: 0}
+  m_AnimatorController: {fileID: 9100000, guid: 23a4fd95618ff014bb1aaf6975db795e, type: 2}
+  m_BreadCrumbs:
+  - m_Target: {fileID: -2548113596664311241, guid: 23a4fd95618ff014bb1aaf6975db795e, type: 2}
+    m_ScrollPosition: {x: 0, y: 0}
+  stateMachineGraph: {fileID: 0}
+  stateMachineGraphGUI: {fileID: 0}
+  blendTreeGraph: {fileID: 0}
+  blendTreeGraphGUI: {fileID: 0}
+  m_AutoLiveLink: 1
+  m_MiniTool: 0
+  m_LockTracker:
+    m_IsLocked: 0
+  m_CurrentEditor: 0
+  m_LayerEditor:
+    m_SelectedLayerIndex: 0
+--- !u!114 &10
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 11}
+  - {fileID: 14}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 385.6
+    width: 1172.8
+    height: 337.19998
+  m_MinSize: {x: 200, y: 100}
+  m_MaxSize: {x: 16192, y: 8096}
+  vertical: 0
+  controlID: 7583
+--- !u!114 &11
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: AnimationWindow
+>>>>>>> Stashed changes
+>>>>>>> Cindyxj
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 351.2
     width: 1172.8
     height: 371.59998
   m_MinSize: {x: 231, y: 271}
   m_MaxSize: {x: 10001, y: 10021}
+=======
+<<<<<<< Updated upstream
+    y: 428
+    width: 1173.6
+    height: 294.8
+  m_MinSize: {x: 101, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
+>>>>>>> Cindyxj
   m_ActualView: {fileID: 11}
   m_Panes:
   - {fileID: 11}
+<<<<<<< HEAD
   - {fileID: 12}
   m_Selected: 0
   m_LastSelected: 1
 --- !u!114 &11
+=======
+  m_Selected: 1
+  m_LastSelected: 0
+--- !u!114 &10
+=======
+    y: 0
+    width: 781.6
+    height: 337.19998
+  m_MinSize: {x: 101, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 13}
+  m_Panes:
+  - {fileID: 12}
+  - {fileID: 13}
+  m_Selected: 1
+  m_LastSelected: 0
+--- !u!114 &12
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12003, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Console
+    m_Image: {fileID: -4950941429401207979, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 0
+    y: 459.2
+    width: 780.6
+    height: 316.19998
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+    m_OverlaysVisible: 1
+--- !u!114 &13
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12071, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Animation
+    m_Image: {fileID: -3237396543322336831, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 0
+    y: 459.2
+    width: 780.6
+    height: 316.19998
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+    m_OverlaysVisible: 1
+  m_LockTracker:
+    m_IsLocked: 0
+  m_LastSelectedObjectID: 49290
+--- !u!114 &14
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: ProjectBrowser
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 781.6
+    y: 0
+    width: 391.20007
+    height: 337.19998
+  m_MinSize: {x: 232, y: 271}
+  m_MaxSize: {x: 10002, y: 10021}
+  m_ActualView: {fileID: 15}
+  m_Panes:
+  - {fileID: 15}
+  m_Selected: 0
+  m_LastSelected: 0
+--- !u!114 &15
+>>>>>>> Stashed changes
+>>>>>>> Cindyxj
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2022,10 +2363,23 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< Updated upstream
     x: 0
+<<<<<<< HEAD
     y: 424.80002
     width: 1171.8
     height: 350.59998
+=======
+    y: 501.6
+    width: 1172.6
+    height: 273.8
+=======
+    x: 781.60004
+    y: 459.2
+    width: 389.20007
+    height: 316.19998
+>>>>>>> Stashed changes
+>>>>>>> Cindyxj
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -2044,22 +2398,51 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
+<<<<<<< HEAD
     - Assets/Script/Dialogue
+=======
+<<<<<<< Updated upstream
+    - Assets
+=======
+    - Assets/Images/Player/walk
+>>>>>>> Stashed changes
+>>>>>>> Cindyxj
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
-  m_StartGridSize: 64
+  m_StartGridSize: 96
   m_LastFolders:
+<<<<<<< HEAD
   - Assets/Script/Dialogue
+=======
+<<<<<<< Updated upstream
+  - Assets
+>>>>>>> Cindyxj
   m_LastFoldersGridSize: -1
+=======
+  - Assets/Images/Player/walk
+  m_LastFoldersGridSize: 96
+>>>>>>> Stashed changes
   m_LastProjectPath: D:\project\Unity\GJ2025.6\EverythingIsAlive
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
     m_SelectedIDs: b86b0000
     m_LastClickedID: 27576
     m_ExpandedIDs: 00000000146a0000986b0000
+=======
+<<<<<<< Updated upstream
+    m_SelectedIDs: ce5d0000
+    m_LastClickedID: 24014
+    m_ExpandedIDs: 00000000ce5d0000
+=======
+    m_SelectedIDs: fcc00000
+    m_LastClickedID: 49404
+    m_ExpandedIDs: 00000000cabe0000ccc00000f4c00000
+>>>>>>> Stashed changes
+>>>>>>> Cindyxj
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2087,7 +2470,15 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000146a0000
+=======
+<<<<<<< Updated upstream
+    m_ExpandedIDs: 00000000ce5d0000
+=======
+    m_ExpandedIDs: 00000000cabe0000
+>>>>>>> Stashed changes
+>>>>>>> Cindyxj
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2112,10 +2503,24 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
+<<<<<<< HEAD
     m_SelectedInstanceIDs: 50690000
     m_LastClickedInstanceID: 26960
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300004272000000000000d6690000
+=======
+<<<<<<< Updated upstream
+    m_SelectedInstanceIDs: 645d0000
+    m_LastClickedInstanceID: 23908
+    m_HadKeyboardFocusLastEvent: 1
+    m_ExpandedInstanceIDs: c6230000
+=======
+    m_SelectedInstanceIDs: 8ac00000
+    m_LastClickedInstanceID: 49290
+    m_HadKeyboardFocusLastEvent: 1
+    m_ExpandedInstanceIDs: c62300004272000000000000d6690000e2690000
+>>>>>>> Stashed changes
+>>>>>>> Cindyxj
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2131,7 +2536,15 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
+<<<<<<< HEAD
       m_ClientGUIView: {fileID: 10}
+=======
+<<<<<<< Updated upstream
+      m_ClientGUIView: {fileID: 9}
+=======
+      m_ClientGUIView: {fileID: 11}
+>>>>>>> Stashed changes
+>>>>>>> Cindyxj
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -2140,8 +2553,9 @@ MonoBehaviour:
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
     m_ScrollPosition: {x: 0, y: 0}
-    m_GridSize: 64
+    m_GridSize: 96
   m_SkipHiddenPackages: 0
+<<<<<<< Updated upstream
   m_DirectoriesAreaWidth: 207
 --- !u!114 &12
 MonoBehaviour:
@@ -2172,7 +2586,15 @@ MonoBehaviour:
     m_LastAppliedPresetName: Default
     m_SaveData: []
     m_OverlaysVisible: 1
+<<<<<<< HEAD
 --- !u!114 &13
+=======
+--- !u!114 &12
+=======
+  m_DirectoriesAreaWidth: 130
+--- !u!114 &16
+>>>>>>> Stashed changes
+>>>>>>> Cindyxj
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2185,8 +2607,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Children:
+<<<<<<< HEAD
   - {fileID: 14}
   - {fileID: 16}
+=======
+<<<<<<< Updated upstream
+  - {fileID: 13}
+  - {fileID: 15}
+=======
+  - {fileID: 17}
+  - {fileID: 19}
+>>>>>>> Stashed changes
+>>>>>>> Cindyxj
   m_Position:
     serializedVersion: 2
     x: 1172.8
@@ -2196,8 +2628,18 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
+<<<<<<< HEAD
   controlID: 24116
 --- !u!114 &14
+=======
+<<<<<<< Updated upstream
+  controlID: 5452
+--- !u!114 &13
+=======
+  controlID: 7533
+--- !u!114 &17
+>>>>>>> Stashed changes
+>>>>>>> Cindyxj
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2214,16 +2656,41 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 363.19995
     height: 392.8
   m_MinSize: {x: 276, y: 71}
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 15}
+=======
+<<<<<<< Updated upstream
+    width: 362.40002
+    height: 481.6
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 14}
+>>>>>>> Cindyxj
   m_Panes:
   - {fileID: 15}
   m_Selected: 0
   m_LastSelected: 0
+<<<<<<< HEAD
 --- !u!114 &15
+=======
+--- !u!114 &14
+=======
+    width: 363.19995
+    height: 392.8
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 18}
+  m_Panes:
+  - {fileID: 18}
+  m_Selected: 0
+  m_LastSelected: 0
+--- !u!114 &18
+>>>>>>> Stashed changes
+>>>>>>> Cindyxj
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2265,7 +2732,15 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_PreviewWindow: {fileID: 0}
+<<<<<<< HEAD
 --- !u!114 &16
+=======
+<<<<<<< Updated upstream
+--- !u!114 &15
+=======
+--- !u!114 &19
+>>>>>>> Stashed changes
+>>>>>>> Cindyxj
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}

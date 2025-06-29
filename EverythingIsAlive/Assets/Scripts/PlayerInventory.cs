@@ -23,7 +23,7 @@ public class PlayerInventory : MonoBehaviour
     }
 
     // 获取指定人物的已分类物品
-    public List<ItemData> GetItemsAssignedTo(string characterID)
+    public List<ItemData> GetItemsAssignedTo(int characterID)
     {
         return items.Where(item => item.characterID == characterID && item.isAssignedToOriginalOwner).ToList();
     }

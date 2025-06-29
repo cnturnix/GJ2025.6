@@ -44,6 +44,7 @@ public class CharacterButtonUI : MonoBehaviour, IDropHandler
                 button.interactable = true;
                 break;
             case CharacterState.Paired:
+                EventManager.Instance.TriggerEvent(EventType.BodyConfirmed, new BodyConfirmedEventArgs(data.characterID));
                 portraitImage.gameObject.SetActive(true);
                 portraitImage.sprite = data.portraitSprite;
                 nameText.text = data.personName;

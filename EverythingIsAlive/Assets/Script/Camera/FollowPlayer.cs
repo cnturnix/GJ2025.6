@@ -48,6 +48,9 @@ public class FollowPlayer : MonoBehaviour
         float targetY = Player.transform.position.y;
 
         // 计算相机半宽
+        // 获取相机尺寸
+        cameraHeight = GetComponent<Camera>().orthographicSize * 2;
+        cameraWidth = cameraHeight * GetComponent<Camera>().aspect;
         float halfCameraWidth = cameraWidth / 2;
         float halfCameraHeight = cameraHeight / 2;
         

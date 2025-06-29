@@ -14,7 +14,7 @@ public class ButtonClick : MonoBehaviour
     public void StartButtonClicked()
     {
         FindObjectOfType<PlayerMovement>().CanMove = true;
-        transform.parent.gameObject.SetActive(false);
+        gameObject.transform.parent.gameObject.SetActive(false);
     }
 
     public void ClickMark()
@@ -23,7 +23,7 @@ public class ButtonClick : MonoBehaviour
         {
             if (isOpened)
             {
-                if(!canClose)return;
+                //if(!canClose)return;
                 isOpened = false;
                 EventManager.Instance.TriggerEvent(EventType.OpenBook,new OpenBookEventArgs(false,false));
                 FirstTime = false;
@@ -32,23 +32,24 @@ public class ButtonClick : MonoBehaviour
                 {
                     transform.parent.GetChild(i).gameObject.SetActive(false);
                 }
-                GlobalData.Instance.BagCanvas.SetActive(false);
+                GlobalData.Instance.Book.SetActive(false);
+                playerControl.CanMove = true;
                 //TODO：老羊离开动画
                 Camera mainCamera = FindObjectOfType<Camera>();
                 if (mainCamera != null)
                 {
-                    mainCamera.orthographicSize = 2;
+                    mainCamera.orthographicSize = 5;
                 }
             }
             else
             {
                 
-                canClose = false;
+                //canClose = false;
                 EventManager.Instance.TriggerEvent(EventType.OpenBook,new OpenBookEventArgs(true,true));
                 NPC02.SetActive(true);
                 NPC02.transform.position=FindObjectOfType<Camera>().transform.position+new Vector3(2.5f,-0.5f,10);
                 NPC01.SetActive(false);
-                GlobalData.Instance.BagCanvas.SetActive(true);
+                GlobalData.Instance.Book.SetActive(true);
                 //不可移动
                 playerControl.CanMove = false;
                 playerControl.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
@@ -62,13 +63,14 @@ public class ButtonClick : MonoBehaviour
             if(isOpened)
             {
                 isOpened = false;
-                GlobalData.Instance.BagCanvas.SetActive(false);
+                playerControl.CanMove = true;
+                GlobalData.Instance.Book.SetActive(false);
                 EventManager.Instance.TriggerEvent(EventType.OpenBook,new OpenBookEventArgs(false,false));
             }
             else
             {
                 isOpened = true;
-                GlobalData.Instance.BagCanvas.SetActive(true);
+                GlobalData.Instance.Book.SetActive(true);
                 EventManager.Instance.TriggerEvent(EventType.OpenBook,new OpenBookEventArgs(false,true));
             }
         }

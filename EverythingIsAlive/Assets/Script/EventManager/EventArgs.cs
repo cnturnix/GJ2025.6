@@ -4,6 +4,7 @@
     GetRemain,
     OpenBook,
     BodyConfirmed,
+    RemainClicked
 }
 public class ClickBodyEventArgs
 {

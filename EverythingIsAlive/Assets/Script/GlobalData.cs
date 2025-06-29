@@ -31,8 +31,14 @@ public class GlobalData:MonoBehaviour
     public GameObject[] AliveBodies;
     public GameObject NPC01;
     public GameObject NPC02;
-    public GameObject BagCanvas;
+    public GameObject Book;
     public GameObject[] AudioManager;
+    public bool[] FoundBody;
+    public bool[] FoundRemain;
+    public GameObject[] Body;
+    public GameObject[] RemainBG;
+    public GameObject Remain;
+    public GameObject RemainDesc;
     void Awake()
     {
         // 确保只有一个实例存在

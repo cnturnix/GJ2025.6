@@ -32,6 +32,7 @@ public class GlobalData:MonoBehaviour
     public GameObject NPC01;
     public GameObject NPC02;
     public GameObject BagCanvas;
+    public GameObject[] AudioManager;
     void Awake()
     {
         // 确保只有一个实例存在

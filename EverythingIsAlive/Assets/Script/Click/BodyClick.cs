@@ -14,6 +14,7 @@ public class BodyClick:MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
             if (hit.collider != null && hit.collider.gameObject == gameObject)
             {
+                GlobalData.Instance.AudioManager[2].GetComponent<AudioSource>().Play();
                 EventManager.Instance.TriggerEvent(EventType.ClickBody,new ClickBodyEventArgs(BodyID));
                 EventManager.Instance.TriggerEvent(EventType.GetRemain,new GetRemainEventArgs(RemainID));
                 

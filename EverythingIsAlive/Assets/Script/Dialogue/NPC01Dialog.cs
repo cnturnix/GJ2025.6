@@ -62,6 +62,7 @@ public class NPC01Dialog : MonoBehaviour
                 playerControl.CanMove = false;
                 playerControl.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
                 playerControl.gameObject.GetComponent<Animator>().SetBool("isMove", false);
+                GlobalData.Instance.AudioManager[1].GetComponent<AudioSource>().Stop();
                 //开始对话第一句
                 StartTyping();
             }
@@ -71,8 +72,8 @@ public class NPC01Dialog : MonoBehaviour
 
     private void StartTyping()
     {
-        
-            StartCoroutine(TypeText());
+        GlobalData.Instance.AudioManager[2].GetComponent<AudioSource>().Play();
+        StartCoroutine(TypeText());
   
     }
     

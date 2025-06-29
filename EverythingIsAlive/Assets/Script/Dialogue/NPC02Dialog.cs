@@ -16,6 +16,7 @@ public class NPC02Dialog : MonoBehaviour
     public float seconds;//间隔时间
     void Start()
     {
+        GlobalData.Instance.AudioManager[2].GetComponent<AudioSource>().Play();
         StartCoroutine(TypeText());
     }
     

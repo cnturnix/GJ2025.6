@@ -24,8 +24,16 @@ public class PlayerMovement : MonoBehaviour
             
             Vector2 movement = new Vector2(moveX, moveY).normalized; // 防止对角线速度过快
             rb.velocity = movement * moveSpeed;
-            if(rb.velocity.magnitude!=0)anim.SetBool("isMove", true);
-            else anim.SetBool("isMove", false);
+            if (rb.velocity.magnitude != 0)
+            {
+                anim.SetBool("isMove", true);
+                GlobalData.Instance.AudioManager[1].GetComponent<AudioSource>().Play();
+            }
+            else
+            {
+                anim.SetBool("isMove", false);
+                GlobalData.Instance.AudioManager[1].GetComponent<AudioSource>().Stop();
+            }
         }
 
     }

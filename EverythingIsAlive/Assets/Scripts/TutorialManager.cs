@@ -27,8 +27,27 @@ public class TutorialManager : MonoBehaviour
 
     void Awake()
     {
-        if (I == null) I = this; else Destroy(gameObject);
+        if (I == null) I = this;
+        else Destroy(gameObject);
         overlayPanel.SetActive(false);
+    }
+
+    void Start()
+    {
+        // 订阅打开书本事件，触发教程开始
+        EventManager.Instance.AddListener<OpenBookEventArgs>(EventType.OpenBook, OnOpenBook);
+    }
+
+    void OnDestroy()
+    {
+        // 取消订阅
+        EventManager.Instance.RemoveListener<OpenBookEventArgs>(EventType.OpenBook, OnOpenBook);
+    }
+
+    // 收到 OpenBook 广播后执行
+    private void OnOpenBook(OpenBookEventArgs args)
+    {
+            StartTutorial();
     }
 
     /// <summary>
@@ -36,9 +55,11 @@ public class TutorialManager : MonoBehaviour
     /// </summary>
     public void StartTutorial(RectTransform firstItemSlot = null)
     {
+        Debug.Log("Tutorial Started");
         step = TutorialStep.WaitFirstPickup;
         overlayPanel.SetActive(true);
         tipText.text = "恭喜获得第一个遗物！";
+        highlightFrame.gameObject.SetActive(firstItemSlot != null);
         if (firstItemSlot != null)
         {
             ShowHighlightAt(firstItemSlot.position);
@@ -74,8 +95,9 @@ public class TutorialManager : MonoBehaviour
         if (step != TutorialStep.WaitFirstConfirm) return;
         step = TutorialStep.Complete;
         HideOverlay();
+        Debug.Log("Tutorial Complete");
+        // 发出教程结束广播，参数可改
         EventManager.Instance.TriggerEvent(EventType.BodyConfirmed, new BodyConfirmedEventArgs(1));
-
     }
 
     private void ShowHighlightAt(Vector2 screenPos)

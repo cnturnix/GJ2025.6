@@ -11,9 +11,11 @@ public class FollowPlayer : MonoBehaviour
     public GameObject Bg;
     //相机宽度
     private float cameraWidth;
+    private float cameraHeight;
     private float minX;
     private float maxX;
-    
+    private float minY;
+    private float maxY;
     
     // Start is called before the first frame update
     void Start()
@@ -22,16 +24,17 @@ public class FollowPlayer : MonoBehaviour
         Bounds bounds = Bg.GetComponent<SpriteRenderer>().bounds;
         minX = bounds.min.x;
         maxX = bounds.max.x;
-        //Debug.Log("minX: " + minX);
-        //Debug.Log("maxX: " + maxX);
+        minY=bounds.min.y;
+        maxY=bounds.max.y;
+        
         // 获取相机尺寸
-        float cameraHeight = GetComponent<Camera>().orthographicSize * 2;
+        cameraHeight = GetComponent<Camera>().orthographicSize * 2;
         cameraWidth = cameraHeight * GetComponent<Camera>().aspect;
-        //Debug.Log("cameraWidth"+cameraWidth);
+        
         // 初始位置设置为中间或玩家位置
         transform.position = new Vector3(
             Player.transform.position.x,
-            transform.position.y,
+            Player.transform.position.y,
             transform.position.z
         );
 
@@ -42,17 +45,18 @@ public class FollowPlayer : MonoBehaviour
     {
         // 获取当前玩家X位置，Y不变
         float targetX = Player.transform.position.x;
+        float targetY = Player.transform.position.y;
 
         // 计算相机半宽
         float halfCameraWidth = cameraWidth / 2;
-
-        // 限制相机X轴位置，使其不超出背景边界
+        float halfCameraHeight = cameraHeight / 2;
+        
         float clampedX = Mathf.Clamp(targetX, minX + halfCameraWidth, maxX - halfCameraWidth);
-
-        // 只更新X轴位置
+        float clampedY = Mathf.Clamp(targetY, minY + halfCameraHeight, maxY - halfCameraHeight);
+        
         transform.position = new Vector3(
             clampedX,
-            transform.position.y,
+            clampedY,
             transform.position.z
         );
     }

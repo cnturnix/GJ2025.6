@@ -5,6 +5,8 @@ using UnityEngine.UI;
 public class Body01Click:MonoBehaviour
 {
     public GameObject Mark;
+    public int BodyID;
+    public int RemainID;
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -14,8 +16,9 @@ public class Body01Click:MonoBehaviour
             if (hit.collider != null && hit.collider.gameObject == gameObject)
             {
                 GetComponent<SpriteRenderer>().material = GlobalData.Instance.M_Defalut;
-                EventManager.Instance.TriggerEvent(EventType.ClickBody,new ClickBodyEventArgs(1));
-                EventManager.Instance.TriggerEvent(EventType.GetRemain,new GetRemainEventArgs(1));
+                GlobalData.Instance.AudioManager[2].GetComponent<AudioSource>().Play();
+                EventManager.Instance.TriggerEvent(EventType.ClickBody,new ClickBodyEventArgs(BodyID));
+                EventManager.Instance.TriggerEvent(EventType.GetRemain,new GetRemainEventArgs(RemainID));
                 Mark.SetActive(true);
                 Mark.GetComponent<Image>().material=GlobalData.Instance.M_Outline;
             }

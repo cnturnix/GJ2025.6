@@ -14,9 +14,11 @@ public class InventoryUI : MonoBehaviour
     public TMP_Text detailDesc;         // InfoPanel/DetailDesc
     public TMP_Text itemName;
 
+   
     void Start()
     {
         RefreshUI();
+        ClearDetail();
     }
 
     public void RefreshUI()
@@ -26,12 +28,18 @@ public class InventoryUI : MonoBehaviour
 
         foreach (var item in inventory.items)
         {
-            if (item.isPickedUp && !item.isAssignedToOriginalOwner)
-            {
-                var slotGO = Instantiate(relicSlotPrefab, rightItemPanel);
-                slotGO.GetComponent<RelicSlotUI>().Setup(item);
-            }
+            var slotGO = Instantiate(relicSlotPrefab, rightItemPanel);
+            // pass this UI so clicks work
+            slotGO.GetComponent<RelicSlotUI>().Setup(item, this);
         }
+    }
+
+  
+    public void ClearDetail()
+    {
+        detailIcon.sprite = null;
+        detailIcon.color = new Color(1, 1, 1, 0);
+        detailDesc.text = string.Empty;
     }
     public void ShowItemDetail(ItemData item)
     {

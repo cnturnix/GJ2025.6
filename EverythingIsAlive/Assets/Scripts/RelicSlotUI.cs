@@ -2,9 +2,11 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class RelicSlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class RelicSlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler
 {
     public ItemData relicData;
+    public Image iconImage;
+    private InventoryUI inventoryUI;
     private RectTransform rectTransform;
     private Canvas canvas;
     private CanvasGroup canvasGroup;
@@ -19,16 +21,27 @@ public class RelicSlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         canvasGroup = gameObject.AddComponent<CanvasGroup>();
     }
 
-    public void Setup(ItemData data)
+    // Now accept UI reference
+    public void Setup(ItemData data, InventoryUI ui)
     {
         relicData = data;
-        GetComponent<Image>().sprite = data.icon;
-        // 初始状态：只有已拾取且未分配的物品可见可交互
-        gameObject.SetActive(data.isPickedUp && !data.isAssignedToOriginalOwner);
+        inventoryUI = ui;
+        iconImage.sprite = data.icon;
+        // show only if picked up and not yet assigned
+        iconImage.enabled = data.isPickedUp && !data.isAssignedToOriginalOwner;
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (iconImage.enabled)
+        {
+            inventoryUI.ShowItemDetail(relicData);
+        }
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        if (!iconImage.enabled) return;
         dropped = false;
         originalParent = transform.parent;
         originalPosition = rectTransform.anchoredPosition;
@@ -38,11 +51,13 @@ public class RelicSlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
     public void OnDrag(PointerEventData eventData)
     {
+        if (!iconImage.enabled) return;
         rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        if (!iconImage.enabled) return;
         canvasGroup.blocksRaycasts = true;
         if (!dropped)
         {
@@ -58,4 +73,3 @@ public class RelicSlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         rectTransform.anchoredPosition = Vector2.zero;
     }
 }
-

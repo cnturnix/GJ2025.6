@@ -56,7 +56,7 @@ public class GlobalData:MonoBehaviour
     
     public void OnBodyConfirmed(BodyConfirmedEventArgs args)
     {
-        if (Mark.GetComponent<Button>().FirstTime)
+        if (Mark.GetComponent<ButtonClick>().FirstTime)
         {
             NPC02.GetComponentInChildren<NPC03Dialog>().Body01Confirmed();
         }

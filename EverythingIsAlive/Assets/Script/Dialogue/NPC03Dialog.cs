@@ -20,7 +20,7 @@ public class NPC03Dialog : MonoBehaviour
     public void Body01Confirmed()
     {
         GlobalData.Instance.Mark.GetComponent<Image>().material=GlobalData.Instance.M_Outline;
-        GlobalData.Instance.Mark.GetComponent<Button>().canClose=true;
+        GlobalData.Instance.Mark.GetComponent<ButtonClick>().canClose=true;
      
         
         for (int i = 0; i < OldTextSpace.Length; i++)

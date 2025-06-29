@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(Button))]
@@ -75,14 +76,17 @@ public class CharacterButtonUI : MonoBehaviour, IDropHandler
             Destroy(slot.gameObject);
         }
         assignedRelicSlots.Clear();
-
-        uiManager.inventoryUI.RefreshUI();
-
-        if (success)
+        if (uiManager.inventoryUI != null)
         {
-            uiManager.ConfirmCharacter(data);
-            uiManager.RefreshCharacterPanel();
+            uiManager.inventoryUI.RefreshUI();
+
+            if (success)
+            {
+                uiManager.ConfirmCharacter(data);
+                uiManager.RefreshCharacterPanel();
+            }
         }
+        
     }
 
     public void OnDrop(PointerEventData eventData)

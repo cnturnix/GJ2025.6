@@ -19,7 +19,6 @@ public class ButtonClick : MonoBehaviour
 
     public void ClickMark()
     {
-        
         if (FirstTime)
         {
             if (isOpened)
@@ -33,6 +32,7 @@ public class ButtonClick : MonoBehaviour
                 {
                     transform.parent.GetChild(i).gameObject.SetActive(false);
                 }
+                GlobalData.Instance.BagCanvas.SetActive(false);
                 //TODO：老羊离开动画
                 Camera mainCamera = FindObjectOfType<Camera>();
                 if (mainCamera != null)
@@ -46,7 +46,9 @@ public class ButtonClick : MonoBehaviour
                 canClose = false;
                 EventManager.Instance.TriggerEvent(EventType.OpenBook,new OpenBookEventArgs(true,true));
                 NPC02.SetActive(true);
+                NPC02.transform.position=FindObjectOfType<Camera>().transform.position+new Vector3(2.5f,-0.5f,10);
                 NPC01.SetActive(false);
+                GlobalData.Instance.BagCanvas.SetActive(true);
                 //不可移动
                 playerControl.CanMove = false;
                 playerControl.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
@@ -60,11 +62,13 @@ public class ButtonClick : MonoBehaviour
             if(isOpened)
             {
                 isOpened = false;
+                GlobalData.Instance.BagCanvas.SetActive(false);
                 EventManager.Instance.TriggerEvent(EventType.OpenBook,new OpenBookEventArgs(false,false));
             }
             else
             {
                 isOpened = true;
+                GlobalData.Instance.BagCanvas.SetActive(true);
                 EventManager.Instance.TriggerEvent(EventType.OpenBook,new OpenBookEventArgs(false,true));
             }
         }

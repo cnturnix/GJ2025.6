@@ -44,14 +44,23 @@ TagManager:
   - name: Background
     uniqueID: 4220938029
     locked: 0
+  - name: Bodies
+    uniqueID: 2804490665
+    locked: 0
+  - name: Remains
+    uniqueID: 345400367
+    locked: 0
   - name: TriggerPlace
     uniqueID: 3095354163
     locked: 0
-  - name: Player
-    uniqueID: 1070901453
+  - name: NPC
+    uniqueID: 2157775399
     locked: 0
   - name: Dialogue
     uniqueID: 1226088309
+    locked: 0
+  - name: Player
+    uniqueID: 1070901453
     locked: 0
   - name: Foreground
     uniqueID: 97936071

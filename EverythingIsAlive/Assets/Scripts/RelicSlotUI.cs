@@ -10,8 +10,7 @@ public class RelicSlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     private RectTransform rectTransform;
     private Canvas canvas;
     private CanvasGroup canvasGroup;
-    private Transform originalParent;
-    private Vector2 originalPosition;
+    private Vector2 screenOffset;
     private bool dropped;
 
     void Awake()
@@ -21,38 +20,47 @@ public class RelicSlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         canvasGroup = gameObject.AddComponent<CanvasGroup>();
     }
 
-    // Now accept UI reference
     public void Setup(ItemData data, InventoryUI ui)
     {
         relicData = data;
         inventoryUI = ui;
         iconImage.sprite = data.icon;
-        // show only if picked up and not yet assigned
         iconImage.enabled = data.isPickedUp && !data.isAssignedToOriginalOwner;
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
         if (iconImage.enabled)
-        {
             inventoryUI.ShowItemDetail(relicData);
-        }
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
         if (!iconImage.enabled) return;
+
         dropped = false;
-        originalParent = transform.parent;
-        originalPosition = rectTransform.anchoredPosition;
         canvasGroup.blocksRaycasts = false;
-        transform.SetParent(canvas.transform);
+
+        // Calculate offset between pointer and icon center
+        Vector2 localMousePos;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            canvas.transform as RectTransform,
+            eventData.position,
+            eventData.pressEventCamera,
+            out localMousePos);
+        Vector3 worldPoint = (canvas.transform as RectTransform).TransformPoint(localMousePos);
+        screenOffset = rectTransform.position - worldPoint;
+
+        // Move to root of canvas to avoid layout
+        rectTransform.SetParent(canvas.transform, worldPositionStays: true);
     }
 
     public void OnDrag(PointerEventData eventData)
     {
         if (!iconImage.enabled) return;
-        rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        // Follow pointer exactly with offset
+        Vector2 screenPoint = eventData.position;
+        rectTransform.position = screenPoint + screenOffset;
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -61,15 +69,17 @@ public class RelicSlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         canvasGroup.blocksRaycasts = true;
         if (!dropped)
         {
-            transform.SetParent(originalParent);
-            rectTransform.anchoredPosition = originalPosition;
+            // Return to original placeholder parent to maintain slot position
+            rectTransform.SetParent(inventoryUI.rightItemPanel, worldPositionStays: false);
+            // Keep local anchored position zero to snap into slot
+            rectTransform.anchoredPosition = Vector2.zero;
         }
     }
 
     public void AcceptDrop(Transform dropParent)
     {
         dropped = true;
-        transform.SetParent(dropParent);
+        rectTransform.SetParent(dropParent, worldPositionStays: false);
         rectTransform.anchoredPosition = Vector2.zero;
     }
 }

@@ -19,8 +19,8 @@ public class PlayerMovement : MonoBehaviour
         {
             float moveX = Input.GetAxisRaw("Horizontal"); // 获取水平输入（-1, 0, 1）
             float moveY = Input.GetAxisRaw("Vertical");   // 获取垂直输入（-1, 0, 1）
-            if (moveX < 0) transform.localScale = new Vector3(-1, 1, 1);
-            else transform.localScale = new Vector3(1, 1, 1);
+            if (moveX < 0) transform.localScale = new Vector3(-0.4f, 0.4f, 0.4f);
+            else transform.localScale = new Vector3(0.4f,0.4f,0.4f);
             
             Vector2 movement = new Vector2(moveX, moveY).normalized; // 防止对角线速度过快
             rb.velocity = movement * moveSpeed;

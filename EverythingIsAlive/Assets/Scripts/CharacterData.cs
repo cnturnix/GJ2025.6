@@ -5,7 +5,7 @@ using UnityEngine;
 public class CharacterData : ScriptableObject
 {
     [Header("基础信息")]
-    public string characterID;          
+    public int characterID;          
     public string personName;           
     public string description;          
 

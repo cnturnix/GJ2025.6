@@ -7,9 +7,9 @@ using UnityEngine;
 public class ItemData : ScriptableObject
 {
     public string itemName;
-    public string itemID;
+    public int itemID;
     public bool isPickedUp;
-    public string characterID;
+    public int characterID;
     public bool isAssignedToOriginalOwner;
     public Sprite icon;
     [TextArea] public string description;

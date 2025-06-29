@@ -13,6 +13,8 @@ public class RelicSlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     private Vector2 screenOffset;
     private bool dropped;
 
+    private const float DropSpacing = 30f;
+
     void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
@@ -79,7 +81,20 @@ public class RelicSlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     public void AcceptDrop(Transform dropParent)
     {
         dropped = true;
-        rectTransform.SetParent(dropParent, worldPositionStays: false);
-        rectTransform.anchoredPosition = Vector2.zero;
+        rectTransform.SetParent(dropParent, false);
+        // calculate number of relics already under this parent
+        var existingSlots = dropParent.GetComponentsInChildren<RelicSlotUI>(includeInactive: false);
+        int count = existingSlots.Length - 1; // this new slot just added
+        if (count >= 3)
+        {
+            // too many, revert to original parent
+            dropped = false;
+            rectTransform.SetParent(inventoryUI.rightItemPanel, false);
+            rectTransform.anchoredPosition = Vector2.zero;
+            return;
+        }
+        // Position slots horizontally, max 3 per row
+        float xOffset = count * DropSpacing;
+        rectTransform.anchoredPosition = new Vector2(xOffset, 0f);
     }
 }

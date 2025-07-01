@@ -23,15 +23,17 @@ public class ButtonClick : MonoBehaviour
         {
             if (isOpened)
             {
-                //if(!canClose)return;
+                if(!canClose)return;
                 isOpened = false;
-                EventManager.Instance.TriggerEvent(EventType.OpenBook,new OpenBookEventArgs(false,false));
+                //EventManager.Instance.TriggerEvent(EventType.OpenBook,new OpenBookEventArgs(false,false));
                 FirstTime = false;
                 GlobalData.Instance.wall.SetActive(false);
-                for(int i=0;i<transform.parent.childCount;i++)
-                {
-                    transform.parent.GetChild(i).gameObject.SetActive(false);
-                }
+                
+                // for(int i=0;i<transform.parent.childCount;i++)
+                // {
+                //     transform.parent.GetChild(i).gameObject.SetActive(false);
+                // }
+                
                 GlobalData.Instance.Book.SetActive(false);
                 playerControl.CanMove = true;
                 //TODO：老羊离开动画
@@ -44,8 +46,8 @@ public class ButtonClick : MonoBehaviour
             else
             {
                 
-                //canClose = false;
-                EventManager.Instance.TriggerEvent(EventType.OpenBook,new OpenBookEventArgs(true,true));
+                canClose = false;
+                //EventManager.Instance.TriggerEvent(EventType.OpenBook,new OpenBookEventArgs(true,true));
                 NPC02.SetActive(true);
                 NPC02.transform.position=FindObjectOfType<Camera>().transform.position+new Vector3(2.5f,-0.5f,10);
                 NPC01.SetActive(false);
@@ -65,13 +67,13 @@ public class ButtonClick : MonoBehaviour
                 isOpened = false;
                 playerControl.CanMove = true;
                 GlobalData.Instance.Book.SetActive(false);
-                EventManager.Instance.TriggerEvent(EventType.OpenBook,new OpenBookEventArgs(false,false));
+                //EventManager.Instance.TriggerEvent(EventType.OpenBook,new OpenBookEventArgs(false,false));
             }
             else
             {
                 isOpened = true;
                 GlobalData.Instance.Book.SetActive(true);
-                EventManager.Instance.TriggerEvent(EventType.OpenBook,new OpenBookEventArgs(false,true));
+                //EventManager.Instance.TriggerEvent(EventType.OpenBook,new OpenBookEventArgs(false,true));
             }
         }
         

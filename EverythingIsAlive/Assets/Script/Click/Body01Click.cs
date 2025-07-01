@@ -6,7 +6,7 @@ public class Body01Click:MonoBehaviour
 {
     public GameObject Mark;
     public int BodyID;
-    public int RemainID;
+    public int[] RemainID;
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -18,7 +18,10 @@ public class Body01Click:MonoBehaviour
                 GetComponent<SpriteRenderer>().material = GlobalData.Instance.M_Defalut;
                 GlobalData.Instance.AudioManager[2].GetComponent<AudioSource>().Play();
                 EventManager.Instance.TriggerEvent(EventType.ClickBody,new ClickBodyEventArgs(BodyID));
-                EventManager.Instance.TriggerEvent(EventType.GetRemain,new GetRemainEventArgs(RemainID));
+                for (int i = 0; i < RemainID.Length; i++)
+                {
+                    EventManager.Instance.TriggerEvent(EventType.GetRemain,new GetRemainEventArgs(RemainID[i]));
+                }
                 Mark.SetActive(true);
                 Mark.GetComponent<Image>().material=GlobalData.Instance.M_Outline;
             }

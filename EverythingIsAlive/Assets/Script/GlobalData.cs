@@ -26,19 +26,24 @@ public class GlobalData:MonoBehaviour
     public Material M_Defalut;
     public GameObject Mark;
     public GameObject wall;
-    public GameObject[] Bodies;
-    public GameObject[] Remains;
-    public GameObject[] AliveBodies;
+
     public GameObject NPC01;
     public GameObject NPC02;
     public GameObject Book;
     public GameObject[] AudioManager;
-    public bool[] FoundBody;
-    public bool[] FoundRemain;
-    public GameObject[] Body;
-    public GameObject[] RemainBG;
-    public GameObject Remain;
-    public GameObject RemainDesc;
+    [Header("场景变量")]
+    public GameObject[] Bodies;
+    public GameObject[] Remains;
+    public GameObject[] AliveBodies;
+    [Header("书中变量")]
+    public GameObject[] BookBody;
+    public GameObject[] BookAliveBody;
+    public GameObject[] BookBodyBG;
+    
+    public GameObject[] BookRemainBG;
+    public GameObject[] BookRemain;
+    public GameObject BookRemainParent;
+    public GameObject BookRemainDesc;
     void Awake()
     {
         // 确保只有一个实例存在
@@ -55,11 +60,15 @@ public class GlobalData:MonoBehaviour
     public void Start()
     {
         EventManager.Instance.AddListener<BodyConfirmedEventArgs>(EventType.BodyConfirmed, OnBodyConfirmed);
+        EventManager.Instance.AddListener<ClickBodyEventArgs>(EventType.ClickBody, OnClickBody);
+        EventManager.Instance.AddListener<GetRemainEventArgs>(EventType.GetRemain, OnGetRemain);
     }
 
     public void OnDestroy()
     {
         EventManager.Instance.RemoveListener<BodyConfirmedEventArgs>(EventType.BodyConfirmed, OnBodyConfirmed);
+        EventManager.Instance.RemoveListener<ClickBodyEventArgs>(EventType.ClickBody, OnClickBody);
+        EventManager.Instance.RemoveListener<GetRemainEventArgs>(EventType.GetRemain, OnGetRemain);
     }
     
     public void OnBodyConfirmed(BodyConfirmedEventArgs args)
@@ -71,5 +80,15 @@ public class GlobalData:MonoBehaviour
         Bodies[args.BodyId].SetActive(false);
         AliveBodies[args.BodyId].SetActive(true);
        
+    }
+    public void OnClickBody(ClickBodyEventArgs args)
+    { 
+        BookBodyBG[args.BodyID-1].SetActive(false);
+        BookBody[args.BodyID-1].SetActive(true);
+    }
+    public void OnGetRemain(GetRemainEventArgs args)
+    {
+        BookRemainBG[args.RemainID-1].SetActive(false);
+        BookRemain[args.RemainID-1].SetActive(true);
     }
 }

@@ -16,8 +16,10 @@ public class BodyClick:MonoBehaviour
             {
                 GlobalData.Instance.AudioManager[2].GetComponent<AudioSource>().Play();
                 EventManager.Instance.TriggerEvent(EventType.ClickBody,new ClickBodyEventArgs(BodyID));
-                EventManager.Instance.TriggerEvent(EventType.GetRemain,new GetRemainEventArgs(RemainID));
-                
+                if (RemainID != -1)
+                {
+                    EventManager.Instance.TriggerEvent(EventType.GetRemain,new GetRemainEventArgs(RemainID));
+                }
             }
         }
 

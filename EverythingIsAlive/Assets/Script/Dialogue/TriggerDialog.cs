@@ -33,7 +33,6 @@ public class TriggerDialog : MonoBehaviour
                     playerControl.CanMove = false;
                     playerControl.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
                     playerControl.gameObject.GetComponent<Animator>().SetBool("isMove", false);
-                    GlobalData.Instance.AudioManager[1].GetComponent<AudioSource>().Stop();
                     StartTyping();
                 }
             }

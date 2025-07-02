@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Remain03
   m_EditorClassIdentifier: 
   RemainID: 3
-  RemainName: "\u679C\u51BB"
+  RemainName: "\u4E00\u76D8\u679C\u51BB"
   BodyID: 6
-  RemainDesc: 
+  RemainDesc: " \u201C\u8393\u679C\u4E0E\u6708\u5149\u201D\u53E3\u5473\u7684\u679C\u51BB\uFF0C\u6DF1\u53D7\u5C0F\u9547\u4E0A\u5973\u58EB\u7684\u559C\u7231"
+  RemainImage: {fileID: 0}
+  RemainICON: {fileID: 0}

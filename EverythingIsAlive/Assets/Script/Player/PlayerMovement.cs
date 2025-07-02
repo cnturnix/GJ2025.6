@@ -27,12 +27,13 @@ public class PlayerMovement : MonoBehaviour
             if (rb.velocity.magnitude != 0)
             {
                 anim.SetBool("isMove", true);
-                GlobalData.Instance.AudioManager[1].GetComponent<AudioSource>().Play();
+                GlobalData.Instance.AudioManager[1].SetActive(true);
+                
             }
             else
             {
                 anim.SetBool("isMove", false);
-                GlobalData.Instance.AudioManager[1].GetComponent<AudioSource>().Stop();
+                GlobalData.Instance.AudioManager[1].SetActive(false);
             }
         }
 

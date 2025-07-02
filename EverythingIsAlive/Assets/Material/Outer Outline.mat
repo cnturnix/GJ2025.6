@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: outline
-  m_Shader: {fileID: 4800000, guid: 10405ef33edbcc946ab2f175ddbbb00e, type: 3}
+  m_Name: Outer Outline
+  m_Shader: {fileID: 4800000, guid: 2467268fbc0ee4747aae9c9f0618cdea, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -26,14 +26,10 @@ Material:
     - _MainTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0.57, y: 0}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - PixelSnap: 0
-    - _OutlineSize: 0.93
-    - _lineWidth: 6.93
+    - _OutlineSize: 6.64
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _OutlineColor: {r: 1, g: 0, b: 0, a: 1}
-    - _lineColor: {r: 1, g: 0.9529412, b: 0.7529412, a: 1}
+    - _OutlineColor: {r: 1, g: 0.92892253, b: 0, a: 1}
   m_BuildTextureStacks: []

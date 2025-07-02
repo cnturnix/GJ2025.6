@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class DropScript : MonoBehaviour,IDropHandler
 {
@@ -9,7 +10,14 @@ public class DropScript : MonoBehaviour,IDropHandler
         eventData.pointerDrag.GetComponent<RemainController>().inBody=true;
         eventData.pointerDrag.transform.SetParent(transform);
         eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition=GetComponent<RectTransform>().anchoredPosition+dropPoint[transform.childCount-1];
-        //被拖动ui物体的锚点位置==插槽锚点位置
         eventData.pointerDrag.GetComponent<CanvasGroup>().blocksRaycasts = true;
+        if (GlobalData.Instance.Mark.GetComponent<ButtonClick>().FirstTime)
+        {
+            if (transform.childCount == transform.parent.GetChild(1)
+                    .GetComponent<ConfirmClicked>().bodyData.RemainsID.Count)
+            {
+                transform.parent.GetChild(1).GetComponent<Image>().material = GlobalData.Instance.M_Outline;
+            }
+        }
     }
 }

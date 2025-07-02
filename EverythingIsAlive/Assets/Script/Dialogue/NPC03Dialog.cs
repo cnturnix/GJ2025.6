@@ -27,7 +27,8 @@ public class NPC03Dialog : MonoBehaviour
         {
             OldTextSpace[i].SetActive(false);
         }
-        GlobalData.Instance.AudioManager[2].GetComponent<AudioSource>().Play();
+        GlobalData.Instance.AudioManager[3].GetComponent<AudioSource>().Play();
+        Debug.Log("oldgoataudio");
         StartCoroutine(TypeText());
     }
 

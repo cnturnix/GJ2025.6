@@ -37,6 +37,7 @@ public class RemainController : MonoBehaviour, IBeginDragHandler, IDragHandler,I
             transform.parent = GlobalData.Instance.BookRemainParent.transform;
             rectTransform.position = GlobalData.Instance.BookRemainBG[remainData.RemainID - 1].transform.position;
         }
+        
     }
 
 }

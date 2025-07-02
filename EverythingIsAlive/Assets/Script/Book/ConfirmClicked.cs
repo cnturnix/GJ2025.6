@@ -1,11 +1,20 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
+using Image = UnityEngine.UI.Image;
 
 public class ConfirmClicked : MonoBehaviour
 {
     public BodyData bodyData;
     public bool passConfirm;
+
+    public void Update()
+    {
+        
+    }
+
     public void Clicked1Confirm()
     {
         passConfirm = false;
@@ -40,9 +49,12 @@ public class ConfirmClicked : MonoBehaviour
             GlobalData.Instance.BookAliveBody[bodyData.BodyID-1].SetActive(true);
             GlobalData.Instance.Bodies[bodyData.BodyID-1].SetActive(false);
             GlobalData.Instance.AliveBodies[bodyData.BodyID-1].SetActive(true);
+            GetComponent<Image>().material=GlobalData.Instance.M_Defalut;
+            GlobalData.Instance.Mark.GetComponent<Image>().material = GlobalData.Instance.M_Outline;
+            GlobalData.Instance.Mark.GetComponent<ButtonClick>().canClose = true;
         }
 
-        GlobalData.Instance.Mark.GetComponent<ButtonClick>().canClose = true;
+       
     }
     public void Clicked2Confirm()
     {

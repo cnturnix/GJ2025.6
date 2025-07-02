@@ -24,6 +24,8 @@ public class ShowDesc : MonoBehaviour
         RemainImage.sprite = remainData.RemainICON;
         RemainName.text=remainData.RemainName;
         RemainDesc.text = remainData.RemainDesc;
+
+        
     }
     
 }

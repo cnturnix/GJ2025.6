@@ -1,5 +1,6 @@
 ﻿using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GlobalData:MonoBehaviour
 {
@@ -83,6 +84,7 @@ public class GlobalData:MonoBehaviour
     }
     public void OnClickBody(ClickBodyEventArgs args)
     { 
+        AudioManager[2].GetComponent<AudioSource>().Play();
         BookBodyBG[args.BodyID-1].SetActive(false);
         BookBody[args.BodyID-1].SetActive(true);
     }
@@ -90,5 +92,9 @@ public class GlobalData:MonoBehaviour
     {
         BookRemainBG[args.RemainID-1].SetActive(false);
         BookRemain[args.RemainID-1].SetActive(true);
+        if (Instance.Mark.GetComponent<ButtonClick>().FirstTime)
+        {
+            BookRemain[args.RemainID-1].GetComponent<Image>().material = Instance.M_Outline;
+        }
     }
 }

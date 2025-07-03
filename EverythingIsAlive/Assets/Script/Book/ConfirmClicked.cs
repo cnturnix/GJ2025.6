@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 using Image = UnityEngine.UI.Image;
 
@@ -9,11 +8,7 @@ public class ConfirmClicked : MonoBehaviour
 {
     public BodyData bodyData;
     public bool passConfirm;
-
-    public void Update()
-    {
-        
-    }
+    
 
     public void Clicked1Confirm()
     {

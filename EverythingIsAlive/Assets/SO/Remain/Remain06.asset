@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Remain06
   m_EditorClassIdentifier: 
   RemainID: 6
-  RemainName: "\u773C\u955C"
+  RemainName: "\u5355\u7247\u773C\u955C"
   BodyID: 3
-  RemainDesc: "\u4E00\u679A\u7CBE\u5DE7\u7684\u9EC4\u94DC\u5355\u7247\u773C\u955C\uFF0C\u955C\u7247\u8FB9\u7F18\u6CDB\u7740\u5FAE\u5149"
-  RemainImage: {fileID: 0}
-  RemainICON: {fileID: 0}
+  RemainDesc: "\u4E00\u679A\u7CBE\u5DE7\u7684\u9EC4\u94DC\u5355\u7247\u773C\u955C\uFF0C\u955C\u7247\u8FB9\u7F18\u6CDB\u7740\u5FAE\u5149\u3002"
+  RemainImage: {fileID: 21300000, guid: d4a9642b7d2d6824597f9700bf3126d3, type: 3}
+  RemainICON: {fileID: 21300000, guid: 35b5e86d39566ea46b8df6da14a7e727, type: 3}

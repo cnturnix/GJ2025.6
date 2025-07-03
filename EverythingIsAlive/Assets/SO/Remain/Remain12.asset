@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6231ef4d1f342d140936dba6ee33511c, type: 3}
-  m_Name: Remain09
+  m_Name: Remain12
   m_EditorClassIdentifier: 
-  RemainID: 9
-  RemainName: "\u82B1\u76C6"
-  BodyID: 1
-  RemainDesc: "\u4E00\u76C6\u7834\u788E\u7684\u90C1\u91D1\u9999\u3002"
-  RemainImage: {fileID: 21300000, guid: af4f14d290d557f4abbb1a26de05409a, type: 3}
-  RemainICON: {fileID: 21300000, guid: e91cc42dbf88fa84683755804a4bb097, type: 3}
+  RemainID: 12
+  RemainName: "\u82B1\u74E3"
+  BodyID: 0
+  RemainDesc: "\u4E00\u7247\u7C89\u8272\u7684\u90C1\u91D1\u9999\u82B1\u74E3\u3002"
+  RemainImage: {fileID: 0}
+  RemainICON: {fileID: 0}

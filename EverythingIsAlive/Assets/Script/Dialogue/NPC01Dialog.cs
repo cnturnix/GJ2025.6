@@ -73,7 +73,6 @@ public class NPC01Dialog : MonoBehaviour
     private void StartTyping()
     {
         GlobalData.Instance.AudioManager[3].GetComponent<AudioSource>().Play();
-        Debug.Log("oldgoataudio");
         StartCoroutine(TypeText());
   
     }
@@ -91,8 +90,8 @@ public class NPC01Dialog : MonoBehaviour
             }
             yield return new WaitForSeconds(seconds);
         }
-
         Body01.GetComponent<SpriteRenderer>().material = GlobalData.Instance.M_Outline;
+        GlobalData.Instance.Bodies[0].GetComponent<Body01Click>().CanClick = true;
         playerControl.CanMove = true;
     }
 

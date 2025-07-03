@@ -44,6 +44,7 @@ public class ButtonClick : MonoBehaviour
                     mainCamera.orthographicSize = 5;
                 }
 
+                
                 mainCamera.transform.GetChild(0).transform.localPosition = new Vector3(-6.5f, -3.5f, 10);
                 mainCamera.transform.GetChild(0).transform.localScale = new Vector3(0.27f,0.27f,0.27f);
                 mainCamera.transform.GetChild(1).transform.localPosition = new Vector3(6.5f, -3.5f, 10);

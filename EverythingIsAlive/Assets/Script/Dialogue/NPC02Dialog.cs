@@ -14,13 +14,12 @@ public class NPC02Dialog : MonoBehaviour
     public float letterDelay = 0.05f; // 字母显示延迟
     private string currentDialog; // 当前正在显示的对话
     public float seconds;//间隔时间
-    void Start()
+
+    public void ShowDialog()
     {
         GlobalData.Instance.AudioManager[3].GetComponent<AudioSource>().Play();
-        Debug.Log("oldgoataudio");
         StartCoroutine(TypeText());
     }
-    
     
     IEnumerator TypeText()
     {

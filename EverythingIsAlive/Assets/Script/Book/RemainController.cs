@@ -9,9 +9,11 @@ public class RemainController : MonoBehaviour, IBeginDragHandler, IDragHandler,I
     public RemainData remainData;
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
+
     public void clickRemain()
     {
         EventManager.Instance.TriggerEvent(EventType.RemainClicked, remainData);
+  
     }
     void Awake()
     {

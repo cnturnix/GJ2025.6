@@ -15,6 +15,6 @@ MonoBehaviour:
   RemainID: 8
   RemainName: "\u7EF3\u5B50"
   BodyID: 1
-  RemainDesc: "\u4E00\u6BB5\u65AD\u88C2\u7684\u725B\u76AE\u7275\u5F15\u7EF3"
+  RemainDesc: "\u4E00\u6BB5\u65AD\u88C2\u7684\u725B\u76AE\u7275\u5F15\u7EF3\u3002"
   RemainImage: {fileID: 21300000, guid: 7b4e84fc16343f740946ae2cdcc9622c, type: 3}
   RemainICON: {fileID: 21300000, guid: 00671d97a4265d641b6734a4f53da86f, type: 3}

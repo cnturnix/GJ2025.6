@@ -7,10 +7,10 @@ public class Body01Click:MonoBehaviour
     public GameObject Mark;
     public int BodyID;
     public int[] RemainID;
-    public bool isClicked=false;
+    public bool CanClick=false;
     private void Update()
     {
-        if (isClicked == false)
+        if (CanClick)
         {
             if (Input.GetMouseButtonDown(0))
             {
@@ -18,7 +18,7 @@ public class Body01Click:MonoBehaviour
                 RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
                 if (hit.collider != null && hit.collider.gameObject == gameObject)
                 {
-                    isClicked = true;
+                    CanClick = true;
                     GetComponent<SpriteRenderer>().material = GlobalData.Instance.M_Defalut;
                     GlobalData.Instance.AudioManager[2].GetComponent<AudioSource>().Play();
                     EventManager.Instance.TriggerEvent(EventType.ClickBody,new ClickBodyEventArgs(BodyID));

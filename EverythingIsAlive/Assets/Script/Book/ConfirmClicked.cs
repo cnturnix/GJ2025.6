@@ -47,6 +47,7 @@ public class ConfirmClicked : MonoBehaviour
             GetComponent<Image>().material=GlobalData.Instance.M_Defalut;
             GlobalData.Instance.Mark.GetComponent<Image>().material = GlobalData.Instance.M_Outline;
             GlobalData.Instance.Mark.GetComponent<ButtonClick>().canClose = true;
+            GlobalData.Instance.BookRemainDesc.GetComponent<ShowDesc>().Clear();
         }
 
        
@@ -88,6 +89,7 @@ public class ConfirmClicked : MonoBehaviour
             }
             GlobalData.Instance.BookBody[bodyData.BodyID-1].SetActive(false);
             GlobalData.Instance.BookAliveBody[bodyData.BodyID-1].SetActive(true);
+            GlobalData.Instance.BookRemainDesc.GetComponent<ShowDesc>().Clear();
         }
     }
     public void Clicked3Confirm()
@@ -126,6 +128,7 @@ public class ConfirmClicked : MonoBehaviour
             }
             GlobalData.Instance.BookBody[bodyData.BodyID-1].SetActive(false);
             GlobalData.Instance.BookAliveBody[bodyData.BodyID-1].SetActive(true);
+            GlobalData.Instance.BookRemainDesc.GetComponent<ShowDesc>().Clear();
         }
     }
     public void Clicked4Confirm()
@@ -162,6 +165,7 @@ public class ConfirmClicked : MonoBehaviour
             }
             GlobalData.Instance.BookBody[bodyData.BodyID-1].SetActive(false);
             GlobalData.Instance.BookAliveBody[bodyData.BodyID-1].SetActive(true);
+            GlobalData.Instance.BookRemainDesc.GetComponent<ShowDesc>().Clear();
         }
     }
     public void Clicked5Confirm()
@@ -197,6 +201,7 @@ public class ConfirmClicked : MonoBehaviour
             }
             GlobalData.Instance.BookBody[bodyData.BodyID-1].SetActive(false);
             GlobalData.Instance.BookAliveBody[bodyData.BodyID-1].SetActive(true);
+            GlobalData.Instance.BookRemainDesc.GetComponent<ShowDesc>().Clear();
         }
     }
     public void Clicked6Confirm()
@@ -231,6 +236,7 @@ public class ConfirmClicked : MonoBehaviour
             }
             GlobalData.Instance.BookBody[bodyData.BodyID-1].SetActive(false);
             GlobalData.Instance.BookAliveBody[bodyData.BodyID-1].SetActive(true);
+            GlobalData.Instance.BookRemainDesc.GetComponent<ShowDesc>().Clear();
         }
     }
 }

@@ -48,9 +48,13 @@ public class ConfirmClicked : MonoBehaviour
             GlobalData.Instance.Mark.GetComponent<Image>().material = GlobalData.Instance.M_Outline;
             GlobalData.Instance.Mark.GetComponent<ButtonClick>().canClose = true;
             GlobalData.Instance.BookRemainDesc.GetComponent<ShowDesc>().Clear();
+            // 首次确认时触发后续教程对话（NPC03）
+            if (GlobalData.Instance.Mark.GetComponent<ButtonClick>().FirstTime && GlobalData.Instance.NPC02 != null)
+            {
+                var npc03 = GlobalData.Instance.NPC02.GetComponentInChildren<NPC03Dialog>();
+                if (npc03 != null) npc03.Body01Confirmed();
+            }
         }
-
-       
     }
     public void Clicked2Confirm()
     {

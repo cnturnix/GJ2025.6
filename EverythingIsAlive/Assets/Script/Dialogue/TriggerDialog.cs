@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -12,7 +12,6 @@ public class TriggerDialog : MonoBehaviour
     public GameObject[] TextSpace;//对话框
     public string[] Dialog;//对话文本
     public TMP_Text[] DialogText; // 对话文本UI对象(按照DialogueType顺序)
-    private int currentLine = 0; // 当前对话行索引
     public float letterDelay = 0.05f; // 字母显示延迟
     private string currentDialog; // 当前正在显示的对
     public PlayerMovement playerControl;//玩家控制

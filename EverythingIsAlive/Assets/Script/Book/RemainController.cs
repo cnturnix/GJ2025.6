@@ -36,7 +36,7 @@ public class RemainController : MonoBehaviour, IBeginDragHandler, IDragHandler,I
         canvasGroup.blocksRaycasts = true;
         if (!inBody)
         {
-            transform.parent = GlobalData.Instance.BookRemainParent.transform;
+            transform.SetParent(GlobalData.Instance.BookRemainParent.transform, false);
             rectTransform.position = GlobalData.Instance.BookRemainBG[remainData.RemainID - 1].transform.position;
         }
         

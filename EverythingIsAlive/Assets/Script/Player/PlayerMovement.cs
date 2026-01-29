@@ -27,15 +27,22 @@ public class PlayerMovement : MonoBehaviour
             if (rb.velocity.magnitude != 0)
             {
                 anim.SetBool("isMove", true);
-                GlobalData.Instance.AudioManager[1].SetActive(true);
-                
+                SetWalkAudioActive(true);
             }
             else
             {
                 anim.SetBool("isMove", false);
-                GlobalData.Instance.AudioManager[1].SetActive(false);
+                SetWalkAudioActive(false);
             }
         }
 
+    }
+
+    private void SetWalkAudioActive(bool active)
+    {
+        if (GlobalData.Instance == null || GlobalData.Instance.AudioManager == null) return;
+        if (GlobalData.Instance.AudioManager.Length <= 1) return;
+        GameObject walkAudio = GlobalData.Instance.AudioManager[1];
+        if (walkAudio != null) walkAudio.SetActive(active);
     }
 }

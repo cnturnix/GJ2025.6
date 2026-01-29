@@ -1,33 +1,57 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// 新手教程：NPC02 的对话（第一次点击遗物时由 ShowDesc 触发）。
+/// 逐字显示多句对话，可配置延迟与句间间隔。
+/// </summary>
 public class NPC02Dialog : MonoBehaviour
 {
-    //对话的部分
-    public GameObject[] TextSpace;//对话框
-    public TMP_Text[] DialogText;//对话文本
-    public string[] Dialog;//对话文本
-    public float letterDelay = 0.05f; // 字母显示延迟
-    private string currentDialog; // 当前正在显示的对话
-    public float seconds;//间隔时间
+    [Header("对话 UI")]
+    public GameObject[] TextSpace;
+    public TMP_Text[] DialogText;
+    public string[] Dialog;
+
+    [Header("节奏")]
+    public float letterDelay = 0.05f;
+    public float seconds = 1f;
 
     public void ShowDialog()
     {
-        GlobalData.Instance.AudioManager[3].GetComponent<AudioSource>().Play();
+        PlayTutorialSound();
         StartCoroutine(TypeText());
     }
-    
+
+    private void PlayTutorialSound()
+    {
+        if (GlobalData.Instance == null || GlobalData.Instance.AudioManager == null) return;
+        if (GlobalData.Instance.AudioManager.Length <= 3) return;
+        GameObject audioObj = GlobalData.Instance.AudioManager[3];
+        if (audioObj != null)
+        {
+            var audioSource = audioObj.GetComponent<AudioSource>();
+            if (audioSource != null) audioSource.Play();
+        }
+    }
+
     IEnumerator TypeText()
     {
-        for (int i = 0; i < TextSpace.Length; i++)
+        int count = Mathf.Min(
+            TextSpace != null ? TextSpace.Length : 0,
+            DialogText != null ? DialogText.Length : 0,
+            Dialog != null ? Dialog.Length : 0);
+
+        for (int i = 0; i < count; i++)
         {
-            currentDialog=Dialog[i];
-            TextSpace[i].SetActive(true);
-            foreach (char c in currentDialog)
+            if (DialogText[i] != null) DialogText[i].text = "";
+            string line = Dialog[i];
+            if (TextSpace[i] != null) TextSpace[i].SetActive(true);
+
+            foreach (char c in line)
             {
                 DialogText[i].text += c;
                 yield return new WaitForSeconds(letterDelay);
@@ -35,5 +59,4 @@ public class NPC02Dialog : MonoBehaviour
             yield return new WaitForSeconds(seconds);
         }
     }
-
 }

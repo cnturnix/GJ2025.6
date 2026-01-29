@@ -4,6 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using Vector3 = UnityEngine.Vector3;
 
+/// <summary>
+/// 书本/标记按钮逻辑。点击 Mark 时：
+/// - 首次：打开书本并显示 NPC02（新手引导）；再次点击可关闭书本并移走 NPC02。
+/// - 非首次：仅开关书本。
+/// </summary>
 public class ButtonClick : MonoBehaviour
 {
     public GameObject NPC01;
@@ -42,14 +47,15 @@ public class ButtonClick : MonoBehaviour
                 if (mainCamera != null)
                 {
                     mainCamera.orthographicSize = 5;
+                    if (mainCamera.transform.childCount >= 2)
+                    {
+                        mainCamera.transform.GetChild(0).localPosition = new Vector3(-6.5f, -3.5f, 10);
+                        mainCamera.transform.GetChild(0).localScale = new Vector3(0.27f, 0.27f, 0.27f);
+                        mainCamera.transform.GetChild(1).localPosition = new Vector3(6.5f, -3.5f, 10);
+                        mainCamera.transform.GetChild(1).localScale = new Vector3(0.32f, 0.32f, 0.32f);
+                    }
                 }
-
-                
-                mainCamera.transform.GetChild(0).transform.localPosition = new Vector3(-6.5f, -3.5f, 10);
-                mainCamera.transform.GetChild(0).transform.localScale = new Vector3(0.27f,0.27f,0.27f);
-                mainCamera.transform.GetChild(1).transform.localPosition = new Vector3(6.5f, -3.5f, 10);
-                mainCamera.transform.GetChild(1).transform.localScale = new Vector3(0.32f, 0.32f, 0.32f);
-                StartCoroutine(MoveNPC(NPC02.transform.position+new Vector3(-15,0,0), 6f));
+                StartCoroutine(MoveNPC(NPC02.transform.position + new Vector3(-15, 0, 0), 6f));
             }
             else
             {
@@ -62,6 +68,8 @@ public class ButtonClick : MonoBehaviour
                 playerControl.CanMove = false;
                 playerControl.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
                 isOpened = true;
+                // 首次进入该界面时触发 NPC02 教程对话
+                PlayNPC02TutorialDialog();
             }
             
         }
@@ -103,5 +111,18 @@ public class ButtonClick : MonoBehaviour
         NPC02.SetActive(false);
     }
 
-
+    /// <summary>首次进入书本界面时播放 NPC02 教程对话（Trigger1），仅播一次</summary>
+    private void PlayNPC02TutorialDialog()
+    {
+        if (GlobalData.Instance != null && GlobalData.Instance.NPC02TutorialDialogPlayed) return;
+        if (NPC02 == null || NPC02.transform.childCount == 0) return;
+        Transform trigger = NPC02.transform.GetChild(0);
+        trigger.gameObject.SetActive(true);
+        var dialog = trigger.GetComponent<NPC02Dialog>();
+        if (dialog != null)
+        {
+            GlobalData.Instance.NPC02TutorialDialogPlayed = true;
+            dialog.ShowDialog();
+        }
+    }
 }

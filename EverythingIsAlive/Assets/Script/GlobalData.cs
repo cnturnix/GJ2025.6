@@ -1,4 +1,4 @@
-﻿using Unity.VisualScripting;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -30,6 +30,8 @@ public class GlobalData:MonoBehaviour
 
     public GameObject NPC01;
     public GameObject NPC02;
+    /// <summary>NPC02 教程对话是否已播放过（首次进入书本或首次点击遗物只播一次）</summary>
+    public bool NPC02TutorialDialogPlayed;
     public GameObject Book;
     public GameObject[] AudioManager;
     [Header("场景变量")]
